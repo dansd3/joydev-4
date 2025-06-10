@@ -1,4 +1,4 @@
-import { diff } from './modules/diff';
-import { sum } from './modules/sum';
+import { createHiddenLogger } from './modules/createHiddenLogger';
 
-export { sum, diff };
+export const logger = createHiddenLogger();
+
