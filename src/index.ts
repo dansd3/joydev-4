@@ -1,4 +1,2 @@
-import { createHiddenLogger } from './modules/createHiddenLogger';
-
-export const logger = createHiddenLogger();
-
+export { createHiddenLogger } from './modules/createHiddenLogger';
+export type { LoggerNode } from './modules/types';
