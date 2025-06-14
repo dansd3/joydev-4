@@ -1,6 +1,6 @@
 {
-	"name": "@dansd3/logger",
-	"version": "1.0.0",
+	"name": "@dansd5/logger",
+	"version": "1.0.2",
 	"description": "Better console.log for large projects",
 	"main": "lib/index.js",
 	"module": "esm/index.js",
@@ -30,6 +30,11 @@
 	},
 	"packageManager": "yarn@3.4.1",
 	"publishConfig": {
-		"dansd3:registry": "https://gitlab.com/api/v4/projects/70787780/packages/npm/"
-	}
+		"dansd5:registry": "https://gitlab.com/api/v4/projects/70813211/packages/npm/"
+	},
+	"directories": {
+		"lib": "lib"
+	},
+	"author": "",
+	"license": "ISC"
 }

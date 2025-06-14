@@ -3,7 +3,7 @@ export type LoggerMethods = {
   $warn: (...args: any[]) => void;
   $error: (...args: any[]) => void;
   $clear: () => void;
-  $print: (args: boolean) => void;
+  $print: (args?: boolean) => void;
 };
 
 export type LoggerNode = LoggerMethods & {
