@@ -6,6 +6,10 @@ export type LoggerMethods = {
   $print: (args?: boolean) => void;
 };
 
+export type NestedLoggerNode<T> = LoggerMethods & {
+  [K in keyof T]: T[K] extends object ? NestedLoggerNode<T[K]> : never;
+};
+
 export type LoggerNode = LoggerMethods & {
   [key: string]: LoggerNode;
 };

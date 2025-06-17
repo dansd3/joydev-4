@@ -1,6 +1,6 @@
-import type { LoggerNode } from "./types";
+import type { LoggerNode, NestedLoggerNode } from "./types";
 
-export function createHiddenLogger(config: Record<string, any>): LoggerNode {
+export function createHiddenLogger<T extends Record<string, any>>(config: T): NestedLoggerNode<T> {
   const buildNode = (path: string[] = []): LoggerNode => {
     const logs: { level: string; args: any[] }[] = [];
 
@@ -23,8 +23,6 @@ export function createHiddenLogger(config: Record<string, any>): LoggerNode {
             loggerNode.$clear();
           }
         });
-
-
       },
       $print: (expand: boolean = false) => {
         const name = path.length === 0 ? 'logger' : path[path.length - 1];
@@ -52,8 +50,6 @@ export function createHiddenLogger(config: Record<string, any>): LoggerNode {
           }
         });
 
-
-
         console.groupEnd();
       }
     };
@@ -71,5 +67,5 @@ export function createHiddenLogger(config: Record<string, any>): LoggerNode {
     return node;
   };
 
-  return buildFromConfig(config);
+  return buildFromConfig(config) as NestedLoggerNode<T>;
 }
