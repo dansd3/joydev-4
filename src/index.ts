@@ -1,4 +1,2 @@
-import { diff } from './modules/diff';
-import { sum } from './modules/sum';
-
-export { sum, diff };
+export { createHiddenLogger } from './modules/createHiddenLogger';
+export type { LoggerNode } from './modules/types';
